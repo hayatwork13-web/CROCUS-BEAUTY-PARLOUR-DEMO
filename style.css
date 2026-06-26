@@ -1,0 +1,227 @@
+/* Crocus Beauty Parlour - Premium Luxury Salon Custom Stylesheet */
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --color-bg-primary: #FFF8FB;
+  --color-bg-secondary: #FDEEF4;
+  --color-accent-pink: #D96A9A;
+  --color-rose-gold: #D4A373;
+  --color-text-dark: #2C2C2C;
+  --color-text-muted: #6F6F6F;
+  --color-card-bg: #FFFFFF;
+  --color-border-pink: #F4D9E5;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-dark);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Typography */
+.font-serif-luxury {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-sans-luxury {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-display {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* High-end Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.25;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+/* Scroll Fade Class */
+.fade-up-element {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-up-element.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Luxury Card Accents */
+.premium-card {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border-pink);
+  box-shadow: 0 4px 20px -2px rgba(217, 106, 154, 0.03), 0 2px 6px -1px rgba(0, 0, 0, 0.01);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-accent-pink), var(--color-rose-gold));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.premium-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px -4px rgba(217, 106, 154, 0.08), 0 4px 12px -2px rgba(212, 163, 115, 0.04);
+  border-color: rgba(217, 106, 154, 0.3);
+}
+
+.premium-card:hover::before {
+  opacity: 1;
+}
+
+/* Rose Gold Border & Metallic Accents */
+.border-rose-gold-glow {
+  border: 1.5px solid #E1B283;
+  box-shadow: 0 0 15px rgba(212, 163, 115, 0.15);
+}
+
+.text-gradient-rose-gold {
+  background: linear-gradient(135deg, #B8860B 0%, #D4A373 50%, #AA7744 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-luxury {
+  background: linear-gradient(135deg, #2C2C2C 20%, #D96A9A 60%, #D4A373 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom Interactive Tabs */
+.tab-active {
+  background-color: var(--color-accent-pink);
+  color: #FFFFFF;
+  border-color: var(--color-accent-pink);
+  box-shadow: 0 4px 12px rgba(217, 106, 154, 0.25);
+}
+
+/* Customized Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E8BFD1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-pink);
+}
+
+/* Elegant Flower Overlay Pattern */
+.flower-pattern-bg {
+  background-image: radial-gradient(#D96A9A 0.5px, transparent 0.5px), radial-gradient(#D4A373 0.5px, #FFF8FB 0.5px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+  opacity: 0.02;
+}
+
+/* Glassmorphism Navigation */
+.glass-nav {
+  background: rgba(255, 248, 251, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(244, 217, 229, 0.5);
+}
+
+/* Luxurious Shimmer effect for CTA buttons */
+.shimmer-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: shine 4s infinite ease-in-out;
+}
+
+/* Star glow for rating */
+.star-glow {
+  filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.4));
+}

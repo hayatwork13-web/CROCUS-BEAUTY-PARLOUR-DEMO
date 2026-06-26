@@ -1,0 +1,6 @@
+{
+  "name": "Crocus Beauty Parlour",
+  "description": "Premium Ladies Beauty Salon & Bridal Studio in Latifabad, Hyderabad, Pakistan. Elegant styling, bridal services, and premium beauty treatments.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
